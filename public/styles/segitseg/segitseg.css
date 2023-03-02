@@ -1,0 +1,35 @@
+#left-bcg-img{
+    background: url(/public/img/large/register/banner-left.png);
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#right-bcg-img{
+    background: url(/public/img/large/register/banner-right.png);
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#content{
+    background-color: var(--bcg-color-secondary);
+
+    border: 5px solid var(--border-color);
+
+    border-radius: 5px;
+}
+
+.content-part{
+    background-color: var(--bcg-color-third);
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 10px var(--bcg-color-third);
+}
+
+#contact-disclaimer{
+    width: fit-content;
+}
+
+ul{
+    list-style-type: none;
+}

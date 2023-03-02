@@ -1,0 +1,30 @@
+.data-error{
+    width: 75%;
+}
+
+.datas{
+    margin: 0 auto;
+
+    width: fit-content;
+}
+
+.data-error-title{
+    font-size: 5rem;
+}
+
+.data-row label, input, select{
+    margin-top: var(--data-row-margin);
+    margin-bottom: var(--data-row-margin);
+
+    width: 20em;
+}
+
+.data-row{
+    width: auto;
+}
+
+.datas:after { 
+    content: ""; 
+    display: block;
+    clear: both;
+} 

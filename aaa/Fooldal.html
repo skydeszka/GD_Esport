@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/global.css"> -->
+    <link rel="stylesheet" href="minden.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <div class="banner">
+        <div>
+            <h1>Rainbow Six Siege bajnokság</h1>
+            <p>Mutasd meg, melyik a legjobb Rainbow Osztag</p>
+            <div id="search">
+                <form class="d-flex">
+                    <input id="search-text" class="form-control me-2" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button id="search-button" class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Főoldal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Regisztráció</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Információ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Segítség</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!--maga a tartalom-->
+    <div class="footer-miatt-padding mt-1">
+        <div class="container-fluid">
+            <div class="row d-flex align-items-stretch">
+
+
+                <!--Card-->
+                <div class="card col-12 col-lg-7 mb-2 bg-dark text-white mt-5 main" style="max-width: 80%; margin: 0 auto;">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <div class="card-body">
+                                <h2 class="card-title mb-5">Főoldal</h2>
+                                <p class="card-text">
+                                <h4>Milyen üres...</h4>
+                                Nem találtunk híreket.<br>
+                                Ha ezt az állapot sokáig fennmarad, kérünk jelezz a vezetőség felé.
+                                </p>
+<?php
+                            /*
+                            <div class="news-post">
+                                <h4 class="news-post-title">Hírnév</h4>
+                                <h6 class="news-post-date">2022.09.29</h6>
+                                <div class="news-post-content">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at nulla eu nunc rhoncus tincidunt vel blandit nisl. Proin venenatis velit sed est tincidunt vulputate. Quisque mi massa, posuere vel imperdiet at, vestibulum vitae nibh. Integer molestie dolor condimentum quam sagittis volutpat. Vivamus in eros in diam facilisis blandit. Cras sollicitudin tellus ut lorem ultricies interdum. In gravida sapien mauris, sit amet tristique odio volutpat eget. Duis non libero hendrerit, aliquam risus in, interdum nisi. Aenean sed bibendum eros, quis ullamcorper lacus. Mauris eu diam aliquet urna dictum dapibus in sed ex.
+                                </div>
+                                <div class="news-post-author blockquote-footer text-end">Skydeszka</div>
+                            </div>
+                            */
+
+                            $newsquery = "SELECT * FROM news ORDER BY created DESC;";
+
+                            $stmt = $pdo->prepare($newsquery);
+
+                            if(!$stmt->execute() || $stmt->rowCount() <= 0){;
+                                $htmltag =
+                                    '<div class="news-post mb-3 p-3">
+                                        <h4 class="news-post-title">Milyen üres...</h4>
+                                        <div class="news-post-content">
+                                            Nem találtunk híreket.<br>
+                                            Ha ezt az állapot sokáig fennmarad, kérünk jelezz a vezetőség felé.
+                                        </div>
+                                    </div>';
+
+                                echo $htmltag;
+
+                            }else{
+
+                                while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                    echo '<div class="news-post mb-3 p-3">';
+                                    echo '<h4 class="news-post-title">';
+                                    echo strip_tags($row['title']);
+                                    echo '</h4>';
+                                    echo '<h6 class="news-post-date">';
+                                    echo date("Y. m. d. H:i", strtotime($row['created']));
+                                    echo '</h6>';
+                                    echo '<div class="news-post-content">';
+                                    echo $row['content'];
+                                    echo '</div>';
+                                    echo '<div class="news-post-author blockquote-footer text-end">';
+                                    echo strip_tags($row['author']);
+                                    echo '</div>';
+                                    echo '</div>';
+                                }
+                            }
+                        ?>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card col-12 col-lg-4 mb-2 second text-white mt-5 main" style="max-width: 80%; margin: 0 auto;">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <div class="card-body">
+                                <h2 class="card-title mb-5">Regisztrált csapatok</h2>
+                                <div id="registered-teams-data" class="px-2">
+                                    <p class="card-text">
+                                    <div class="registered-post row gx-0">
+                                        <div class="col-8"><a class="link"
+                                                href="oldalak/csapatok/adatlap.php?ID=5oKCLxxrQx">TeamPG</a></div>
+                                        <div class="col-4 text-end pe-3">2022-02-24</div>
+                                    </div>
+                                    <div class="registered-post row gx-0">
+                                        <div class="col-8"><a class="link"
+                                                href="oldalak/csapatok/adatlap.php?ID=DC839YGqZu">TheSiegers</a></div>
+                                        <div class="col-4 text-end pe-3">2022-02-24</div>
+                                    </div>
+                                    <div class="registered-post row gx-0">
+                                        <div class="col-8"><a class="link"
+                                                href="oldalak/csapatok/adatlap.php?ID=nx4XgPWUSS">RSG</a></div>
+                                        <div class="col-4 text-end pe-3">2022-02-24</div>
+                                    </div>
+                                    <div class="registered-post row gx-0">
+                                        <div class="col-8"><a class="link"
+                                                href="oldalak/csapatok/adatlap.php?ID=T92fg0xXCS">ByteFight</a></div>
+                                        <div class="col-4 text-end pe-3">2022-02-24</div>
+                                    </div>
+                                    <div class="registered-post row gx-0">
+                                        <div class="col-8"><a class="link"
+                                                href="oldalak/csapatok/adatlap.php?ID=vVrjda8x0j">RecruitMains</a></div>
+                                        <div class="col-4 text-end pe-3">2022-02-24</div>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card footer">
+        <div class="card-body bg-dark text-white">
+            <blockquote class="blockquote mb-0">
+                <p>Minden jog fenntartva<br>Copyright ©2022</p>
+            </blockquote>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>

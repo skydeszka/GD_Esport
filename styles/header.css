@@ -1,0 +1,26 @@
+#banner {
+    background-image: url("/public/img/large/rainbowbanner.jpg") !important;
+
+    background-position: center;
+}
+
+#banner {
+    font-weight: bold;
+
+    text-shadow: 0 0 10px black;
+}
+
+#banner h1{
+    font-variant: small-caps;
+
+    font-size: calc(2.5rem + 1vw);
+}
+
+
+
+
+@media (min-width: 1235px){
+    #banner h1 {
+        font-size: 5rem;
+    }
+}

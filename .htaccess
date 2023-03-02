@@ -1,0 +1,3 @@
+ErrorDocument 404 /oldalak/hibak/404.php
+ErrorDocument 401 /oldalak/hibak/401.php
+ErrorDocument 500 /oldalak/hibak/500.php

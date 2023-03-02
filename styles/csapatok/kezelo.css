@@ -1,0 +1,84 @@
+#left-bcg-img{
+    background: url(/public/img/large/register/banner-left.png);
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#right-bcg-img{
+    background: url(/public/img/large/register/banner-right.png);
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#content{
+    background-color: var(--bcg-color-secondary);
+
+    border: 5px solid var(--border-color);
+
+    border-radius: 5px;
+}
+
+.content-part{
+    background-color: var(--bcg-color-third);
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 10px var(--bcg-color-third);
+}
+
+#contact-disclaimer{
+    width: fit-content;
+}
+
+#data-menu{
+
+    background-color: rgba(0,0,0, .2);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+#data-menu-table>tbody>tr>td{
+    color: black !important;
+}
+
+#data-menu-title{
+    width: 100%;
+
+    font-size: 2.5em;
+
+    background-color: rgba(0,0,0, .25);
+}
+
+.table-dark {
+    --bs-table-bg: #434648;
+
+    color: var(--text-color-main);
+
+    border-color: black;
+}
+
+#menu-list>li{
+    margin: 5px 0;
+}
+
+#teamdata{
+    width: fit-content;
+}
+
+#teamdata>*{
+    width: fit-content;
+}
+
+a{
+    color: rgb(184, 184, 184);
+}
+
+a:hover{
+    color: white;
+}
+
+ul{
+    list-style-type: none;
+}

@@ -1,0 +1,85 @@
+:root{
+    --bcg-color-main: #353535;
+    --bcg-color-secondary: #757D82;
+    --bcg-color-third: #606A70;
+    
+    --border-color: #0d0d0d;
+
+    --text-color-main: #000000;
+    --text-color-light: #fff;
+    --text-color-secondary: #414141;
+}
+
+*{
+    text-shadow: rgba(0,0,0, 1) 0 0 1px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.selectable{
+    user-select: text;
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+}
+
+html, body{
+    width: 100%;
+    min-height: 100vh;
+    
+    height: 100%;
+
+    color: var(--text-color-main) !important;
+
+    background-color: var(--bcg-color-main) !important;
+}
+
+.light-text{
+    color: var(--text-color-light);
+}
+
+#content-root{
+    min-height: 100%;
+    height: fit-content;
+}
+
+.fit-content-horizontal{
+    width: fit-content;
+}
+
+.fit-content-vertical{
+    height: fit-content;
+}
+
+.fit-content{
+    width: fit-content;
+    height: fit-content;
+}
+
+.inline{
+    display: inline-block;
+}
+
+.block{
+    display: block;
+}
+
+.blur-10{
+    filter: blur(10px);
+}
+
+.blur-5{
+    filter: blur(5px);
+}
+
+.blur-2{
+    filter: blur(2px);
+}
+
+a{
+    color: var(--text-color-main);
+}
+
+a:hover{
+    color: var(--text-color-light);
+}
